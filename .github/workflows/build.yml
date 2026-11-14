@@ -15,6 +15,13 @@ jobs:
         with:
           gradle-version: 9.4.1
       - run: gradle build
+      - name: Diagnostics
+        if: failure()
+        run: |
+          for j in $(find ~/.gradle .gradle -name "minecraft*.jar" 2>/dev/null | head -5); do
+            echo "== $j"
+            javap -cp "$j" net.minecraft.client.Minecraft 2>/dev/null | grep -i "screen"
+          done
       - uses: actions/upload-artifact@v4
         with:
           name: gamemode-switch-jar
