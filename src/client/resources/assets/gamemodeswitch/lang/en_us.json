@@ -1,0 +1,8 @@
+{
+  "key.gamemodeswitch.open": "Open Gamemode Menu",
+  "key.category.gamemodeswitch.main": "Gamemode Switch",
+  "gamemodeswitch.title": "Choose Gamemode",
+  "gamemodeswitch.creative": "Creative",
+  "gamemodeswitch.survival": "Survival",
+  "gamemodeswitch.spectator": "Spectator"
+}

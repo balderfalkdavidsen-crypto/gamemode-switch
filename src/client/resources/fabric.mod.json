@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "gamemodeswitch",
+  "version": "${version}",
+  "name": "Gamemode Switch",
+  "description": "Press O to open a menu and switch between Creative, Survival and Spectator.",
+  "authors": ["You"],
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.gamemodeswitch.GamemodeSwitchClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3",
+    "fabric-api": "*"
+  }
+}
