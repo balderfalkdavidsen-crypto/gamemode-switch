@@ -9,21 +9,17 @@ base { archivesName = project.archives_base_name }
 
 repositories { }
 
-dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    // 26.x is unobfuscated: no mappings, plain 'implementation'
-    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+sourceSets {
+    main {
+        java.srcDir 'src/client/java'
+        resources.srcDir 'src/client/resources'
+    }
 }
 
-loom {
-    splitEnvironmentSourceSets()
-    mods {
-        "gamemodeswitch" {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
-    }
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
 
 processResources {
